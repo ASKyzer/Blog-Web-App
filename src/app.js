@@ -1,21 +1,13 @@
 import { http } from './http';
+import { ui } from './ui';
 
+// Get Post on load
 document.addEventListener('DOMContentLoaded', getPosts);
 
+// Get Posts 
 function getPosts() {
   http.get('http://localhost:3000/posts')
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
-    
+    .then(data => ui.showPosts(data)) // call the showPosts method to show posts in UI
+    .catch(err => console.log(err)); 
 }
 
-// const greeting = 'Hello World';
-// console.log(greeting);
-
-// const getData = async (url) => {
-//   const response = await fetch(url);
-//   const result = await response.json();
-//   console.log(result);
-// };
-
-// getData('https://blogging-web-app-38b4a.firebaseio.com/posts');

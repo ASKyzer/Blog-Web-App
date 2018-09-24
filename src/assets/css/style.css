@@ -8,3 +8,9 @@ input#title, textarea#body {
   padding: 5px 10px;
   box-sizing: border-box;
 }
+.edit {
+  color: teal;
+}
+.delete {
+  color: red;
+}
