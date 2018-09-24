@@ -9,8 +9,13 @@ input#title, textarea#body {
   box-sizing: border-box;
 }
 .edit {
-  color: teal;
+  color: #5bc0de;
 }
 .delete {
   color: salmon;
+}
+
+.alert {
+  color: white;
+  opacity: .7!important;
 }

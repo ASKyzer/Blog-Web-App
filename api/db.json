@@ -12,8 +12,13 @@
     },
     {
       "title": "Post 3",
-      "body": "This is post 3 content",
+      "body": "three three three",
       "id": 3
+    },
+    {
+      "title": "Post Four",
+      "body": "This is Post Four",
+      "id": 4
     }
   ]
 }

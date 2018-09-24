@@ -4,13 +4,15 @@ class UI {
     this.titleInput = document.querySelector('#title');
     this.bodyInput = document.querySelector('#body');
     this.id = document.querySelector('#id');
-    this.postSubmit = document.querySelector('#post-submit');
+    this.postSubmit = document.querySelector('.post-submit');
     this.forState = 'add';
   }
 
+  // Show the posts in the UI
   showPosts(posts) {
     let output = '';
 
+    // Create the html to output the posts
     posts.forEach((post) => {
       output += `
       <div class="card mb-3">
@@ -85,7 +87,9 @@ class UI {
 
   // Remove Edit Button
   removeEditButton() {
+    // look for the post-cancel class
     const currentEditButton = document.querySelector('.post-cancel')
+    // if exists, then remove it
     if (currentEditButton ) {
       currentEditButton.remove();
     }
@@ -94,16 +98,16 @@ class UI {
 
   changeFormState(type) {
     if (type === 'edit') {
-      this.removeEditButton();
-
-      // Change the text of the button
+        // If there is already a cancel edit button, remove it before adding another
+        this.removeEditButton();
+       // Change the text of the button
         this.postSubmit.textContent = 'Update Post';
-      // Change the color of the button
-        this.postSubmit.className = 'btn btn-secondary btn-block';
+        // Change the color of the button
+        this.postSubmit.className = 'btn btn-primary';
 
         // Create a cancel button
         const button = document.createElement('button');
-        button.className = 'post-cancel mt-1 btn btn-info btn-block';
+        button.className = 'post-cancel btn btn-info';
         button.appendChild(document.createTextNode('Cancel Edit'));
 
         // Get Parent
@@ -116,7 +120,7 @@ class UI {
         // Change the text of the button
         this.postSubmit.textContent = 'Add Post';
         // Change the color of the button
-        this.postSubmit.className = 'btn btn-secondary btn-block';
+        this.postSubmit.className = 'post-submit btn btn-primary';
         // Remove cancel button if there 
         if (document.querySelector('.post-cancel')) {
           document.querySelector('.post-cancel').remove();
