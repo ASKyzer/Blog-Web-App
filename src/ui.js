@@ -29,6 +29,34 @@ class UI {
     });
     this.post.innerHTML = output;
   }
+
+  showAlert(message, className) {
+    this.clearAlert();
+
+    // Create div
+    const div = document.createElement('div');
+    // Add Classes
+    div.className = className;
+    // Add Text
+    div.appendChild(document.createTextNode(message));
+    // Get Parent
+    const container = document.querySelector('.post-container');
+    // Get posts
+    const posts = document.querySelector('#posts');
+    // Insert alert div into DOM
+    container.insertBefore(div, posts);
+
+
+  }
+
+  clearAlert() {
+
+  }
+
+  clearFields() {
+    this.titleInput.value = '';
+    this.bodyInput.value = '';
+  }
 }
 
 export const ui = new UI();
