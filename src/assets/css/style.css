@@ -1,0 +1,10 @@
+nav {
+  color: #fff;
+}
+
+input#title, textarea#body {
+  width: 100%;
+  border: 1px solid #ccc!important;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
