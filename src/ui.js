@@ -83,8 +83,19 @@ class UI {
     this.id.value = '';
   }
 
+  // Remove Edit Button
+  removeEditButton() {
+    const currentEditButton = document.querySelector('.post-cancel')
+    if (currentEditButton ) {
+      currentEditButton.remove();
+    }
+  }
+  
+
   changeFormState(type) {
     if (type === 'edit') {
+      this.removeEditButton();
+
       // Change the text of the button
         this.postSubmit.textContent = 'Update Post';
       // Change the color of the button

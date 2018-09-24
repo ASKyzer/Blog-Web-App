@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', getPosts);
 // EVENT LISTENERS
 
 // Listen for submit post button click
-document.querySelector('#post-submit').addEventListener('click', submitPost);
+document.querySelector('.post-submit').addEventListener('click', submitPost);
 
 // Listen for edit state
 document.querySelector('#posts').addEventListener('click', enableEdit);
