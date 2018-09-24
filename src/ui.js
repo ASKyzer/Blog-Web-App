@@ -41,16 +41,24 @@ class UI {
     div.appendChild(document.createTextNode(message));
     // Get Parent
     const container = document.querySelector('.post-container');
-    // Get posts
+    // Get posts to insert before
     const posts = document.querySelector('#posts');
     // Insert alert div into DOM
     container.insertBefore(div, posts);
 
-
+    // Set time out for alert
+    setTimeout(() => {
+      this.clearAlert();
+    }, 2500);
   }
 
   clearAlert() {
-
+    // look for the alert class
+    const currentAlert = document.querySelector('.alert');
+    // If there is an alert class, then remove it
+    if (currentAlert) {
+      currentAlert.remove();
+    }
   }
 
   clearFields() {
